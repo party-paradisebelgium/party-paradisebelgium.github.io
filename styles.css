@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333; /* Base text color for readability */
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.nav-links li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Product List */
+.product-list {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Booqable Product List */
+.booqable-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Single Product Card */
+.booqable-product {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+  text-align: center;
+  background-color: #fff;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.booqable-product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.booqable-product h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.booqable-product p {
+  font-size: 1em;
+  color: #e74c3c;
+  margin: 10px 0;
+}
+
+/* Add to Cart Button */
+.booqable-product-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booqable-product-button:hover {
+  background-color: #0056b3;
+}

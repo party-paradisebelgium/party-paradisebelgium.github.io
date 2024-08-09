@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DJ Hire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset */
+        body, h1, h2, p, input, textarea, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #0d0d0d;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #ff477e;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .navbar .logo img {
+            max-height: 60px;
+            transition: transform 0.4s ease;
+        }
+
+        .navbar .logo img:hover {
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #ff477e;
+            background-color: rgba(255, 71, 126, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .contact-form, .contact-details {
+            flex: 1;
+            min-width: 300px;
+            background-color: #222;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form h2, .contact-details h2 {
+            font-size: 2.5rem;
+            color: #ff477e;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-form p, .contact-details p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #333;
+            color: #f4f4f4;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #ff477e;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #e63946;
+        }
+
+        .contact-details a {
+            color: #ff477e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: #e63946;
+        }
+
+        .contact-map {
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/1.png" alt="DJ Hire Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Get In Touch</h2>
+            <p>We’d love to hear from you! Fill out the form below or reach out to us directly for any inquiries or bookings.</p>
+            <form action="/submit-form" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <h2>Contact Details</h2>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p>Email: <a href="mailto:info@djhire.com">info@djhire.com</a></p>
+            <p>Address: 123 Party Lane, Music City, USA</p>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.177681469639!2d-122.41941858468151!3d37.774929279759226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c8f5bafc5%3A0x9c051f7423a5c7!2sSan%20Francisco%2C%20CA%2094103%2C%20USA!5e0!3m2!1sen!2suk!4v1631181062911!5m2!1sen!2suk" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

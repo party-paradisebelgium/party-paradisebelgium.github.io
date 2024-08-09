@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DJ Hire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #0d0d0d;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #ff477e;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .navbar .logo img {
+            max-height: 60px;
+            transition: transform 0.4s ease;
+        }
+
+        .navbar .logo img:hover {
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #ff477e;
+            background-color: rgba(255, 71, 126, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('images/about-hero.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 71, 126, 0.3) 0%, transparent 70%);
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* About Us Section */
+        .about-us {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .about-us-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .about-us-text h2 {
+            font-size: 2.5rem;
+            color: #ff477e;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .about-us-text p {
+            font-size: 1.2rem;
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-us-img-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .about-us-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .about-us-img-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Our Team Section */
+        .team {
+            background-color: #1b1b1b;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .team h2 {
+            font-size: 2.5rem;
+            color: #ff477e;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 2rem;
+            width: calc(33% - 2rem);
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ff477e;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about-us {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-us-img-container {
+                margin-bottom: 2rem;
+            }
+
+            .team-member {
+                width: calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-member {
+                width: 100%;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/1.png" alt="DJ Hire Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>About Us</h1>
+        <p>Get to know more about our passion, team, and dedication to making your events unforgettable</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us container">
+        <div class="about-us-text">
+            <h2>Who We Are</h2>
+            <p>DJ Hire is a leading DJ service provider committed to making every event memorable and exciting. With years of experience and a passion for music, we bring the party to life with our top-notch DJs and state-of-the-art equipment.</p>
+            <p>Our mission is to deliver the best musical experience tailored to your event's unique vibe. From intimate gatherings to grand celebrations, we ensure your guests have a fantastic time.</p>
+        </div>
+        <div class="about-us-img-container">
+            <img src="images/about-us.png" alt="DJ Hire Team">
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="images/Rbtdej.jpeg" alt="DJ Kale Bats">
+                <h3>DJ Kale Bats</h3>
+                <p>With over a decade of experience, DJ Kale Bats is our lead DJ known for his high-energy performances and crowd-pleasing mixes.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/dj-grajacy-na-weselu-768x511.jpg" alt="DJ Techno Tarzan">
+                <h3>DJ Techno Tarzan</h3>
+                <p>DJ Techno Tarzan brings a unique blend of genres and a keen sense of timing, making him a favorite at weddings and corporate events.</p>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

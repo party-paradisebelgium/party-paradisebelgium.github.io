@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - DJ Hire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset */
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #0d0d0d;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #ff477e;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .navbar .logo img {
+            max-height: 60px;
+            transition: transform 0.4s ease;
+        }
+
+        .navbar .logo img:hover {
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #ff477e;
+            background-color: rgba(255, 71, 126, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('images/services-hero.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 71, 126, 0.3) 0%, transparent 70%);
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+
+        .service-card {
+            background: #1b1b1b;
+            border: 1px solid #444;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            text-align: center;
+            width: calc(33% - 1rem);
+            max-width: 320px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #ff477e;
+        }
+
+        .service-card h2 {
+            font-size: 1.75rem;
+            margin: 1.5rem 0;
+            color: #ff477e;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin: 0 1.5rem 2rem;
+            line-height: 1.6;
+        }
+
+        /* Wedding Service Special Styling */
+        .wedding-service {
+            position: relative;
+        }
+
+        .wedding-service img {
+            filter: blur(3px); /* Apply a slight blur to the image */
+        }
+
+        .wedding-service .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2; /* Ensure overlay is on top */
+        }
+
+        .wedding-service .cross {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom right, transparent 45%, #ff477e 50%, transparent 55%), 
+                            linear-gradient(to top right, transparent 45%, #ff477e 50%, transparent 55%);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #0d0d0d;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+            margin-bottom: 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff477e;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background-color: #ff477e;
+            color: #fff;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 1;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            background-color: #ff2d6e;
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .service-card {
+                width: calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                width: 100%;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/1.png" alt="DJ Hire Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Our DJ Services</h1>
+        <p>Experience unparalleled music and entertainment for every occasion</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services container">
+        <div class="service-card wedding-service">
+            <div class="overlay">
+                <div class="cross"></div>
+            </div>
+            <img src="images/wedding.jpeg" alt="Wedding DJ Services">
+            <h2>Wedding DJ</h2>
+            <p>Make your special day unforgettable with our professional wedding DJ services. We curate the perfect playlist to match your taste and theme.</p>
+        </div>
+        <div class="service-card">
+            <img src="images/party.jpeg" alt="Party DJ Services">
+            <h2>Party DJ</h2>
+            <p>Turn up the heat at your party with our energetic DJ services. We ensure a packed dance floor all night long with the latest hits and classic tunes.</p>
+        </div>
+        <div class="service-card">
+            <img src="images/Corporate.jpeg" alt="Corporate DJ Services">
+            <h2>Corporate DJ</h2>
+            <p>Elevate your corporate event with our tailored DJ services. From background music to full-scale entertainment, we've got you covered.</p>
+        </div>
+        <!-- Add more services here -->
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Elevate Your Event?</h2>
+        <p>Contact us today to book our DJ services and make your event unforgettable. We are committed to providing top-notch entertainment that exceeds your expectations.</p>
+        <a href="contact.html" class="cta-button">Book Now</a>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
